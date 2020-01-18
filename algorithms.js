@@ -15,3 +15,31 @@ function timeConversion(s) {
   }
   return hours + digitalTime;
 }
+
+/**
+ *  BREAKING RECORDS
+ * Maria plays college basketball and wants to go pro. Each season she maintains a record of her play. 
+ * She tabulates the number of times she breaks her season record for most points and least points in a game. 
+ * Points scored in the first game establish her record for the season, and she begins counting from there.
+ * Given Maria's scores for a season, find and print the number of times 
+ * she breaks her records for most and least points scored during the season.
+ */
+function breakingRecords(scores) {
+  let min = scores[0];
+  let max = scores[0];
+  let minCount = 0;
+  let maxCount = 0;
+  for (let i = 1; i < scores.length; i++) {
+    if (scores[i] < min) {
+      minCount += 1;
+      min = scores[i]
+    }
+    if (scores[i] > max) {
+      maxCount += 1;
+      max = scores[i];
+    }
+  }
+  const ansArr = [];
+  ansArr.push(maxCount, minCount);
+  return ansArr;
+}
