@@ -56,3 +56,16 @@ function gradingStudents(grades) {
   return finalGrades;
 }
 
+
+/**
+ * BIRTHDAY CAKE CANDLES
+ * You are in charge of the cake for your niece's birthday
+ * and have decided the cake will have one candle for each year of her total age.
+ * When she blows out the candles, she’ll only be able to blow out the tallest ones.
+ * Your task is to find out how many candles she can successfully blow out.
+ */
+function birthdayCakeCandles(ar) {
+  const largestNumber = Math.max(...ar);
+  const candlesBlown = ar.filter(val => val == largestNumber);
+  return candlesBlown.length;
+}
