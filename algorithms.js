@@ -69,3 +69,23 @@ function birthdayCakeCandles(ar) {
   const candlesBlown = ar.filter(val => val == largestNumber);
   return candlesBlown.length;
 }
+
+
+/**
+ * MIGRATORY BIRDS
+ * Complete the migratoryBirds function in the editor below. 
+ * It should return the lowest type number of the most frequently sighted bird.
+ */
+function migratoryBirds(arr) {
+  const val = arr.reduce((acc, val) => {
+    if (val in acc) {
+      acc[val] += 1;
+    } else {
+      acc[val] = 1;
+    }
+    return acc;
+  }, {});
+  const freq = Math.max(...Object.values(val));
+  const ans = Object.keys(val).sort((a, b) => a - b).find(x => val[x] == freq);
+  return ans[0];
+}
