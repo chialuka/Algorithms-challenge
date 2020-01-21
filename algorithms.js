@@ -89,3 +89,31 @@ function migratoryBirds(arr) {
   const ans = Object.keys(val).sort((a, b) => a - b).find(x => val[x] == freq);
   return ans[0];
 }
+
+/**
+ * DAY OF THE PROGRAMMER
+ * From 1700 to 1917, Russia's official calendar was the Julian calendar; since 1918 they used the Gregorian calendar system.
+ * The transition from the Julian to Gregorian calendar system occurred in 1918, when the next day after January 31 was February 14.
+ * Given a year, y, find the date of the 256th day of that year according to 
+ * the official Russian calendar during that year. 
+ * Then print it in the format dd.mm.yyyy, where dd is the two-digit day, mm is the two-digit month, and yyyy is .
+ */
+function dayOfProgrammer(year) {
+  const leapYearDay = `12.09.${year}`;
+  const nonLeapDay = `13.09.${year}`
+  if (year == 1918) return '26.09.1918';
+  if (year < 1918) {
+    if (year % 4 == 0) {
+      return leapYearDay;
+    } else {
+      return nonLeapDay;
+    }
+  }
+  if (year > 1918) {
+    if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+      return leapYearDay;
+    } else {
+      return nonLeapDay;
+    }
+  }
+}
