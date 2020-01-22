@@ -162,3 +162,27 @@ function birthday(s, d, m) {
   });
   return count;
 }
+
+
+/**
+ * DIVISIBLE SUM PAIRS
+ * You are given an array of n integers, ar = [ar[0], ar[1],...,ar[n-1]], and a positive integer, k. 
+ * Find and print the number of (i, j) pairs where i < j and ar[i] + ar[j] is divisible by k.
+ * divisibleSumPairs has the following parameter(s):
+ * n: the integer length of array ar
+ * ar: an array of integers
+ * k: the integer to divide the pair sum by
+ */
+
+function divisibleSumPairs(n, k, ar) {
+  let count = 0;
+  ar.map((x, y) => {
+    if (y != n - 1) {
+      const newArr = ar.slice(y + 1);
+      for (let i = 0; i < newArr.length; i++) {
+        if ((x + newArr[i]) % k == 0) count++;
+      }
+    }
+  })
+  return count;
+}
