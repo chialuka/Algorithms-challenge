@@ -136,3 +136,29 @@ function kangaroo(x1, v1, x2, v2) {
     return 'NO';
   }
 }
+
+/**
+ * BIRTHDAY CHOCOLATE
+ * Lily has a chocolate bar that she wants to share it with Ron for his birthday. 
+ * Each of the squares has an integer on it. She decides to share a contiguous segment 
+ * of the bar selected such that the length of the segment matches Ron's birth month and 
+ * the sum of the integers on the squares is equal to his birth day. 
+ * You must determine how many ways she can divide the chocolate.
+ * birthday has the following parameter(s):
+ * s: an array of integers, the numbers on each of the squares of chocolate
+ * d: an integer, Ron's birth day
+ * m: an integer, Ron's birth month
+ */
+function birthday(s, d, m) {
+  let count = 0;
+  s.map((x, y) => {
+    const newArr = [];
+    for (let i = 0; i < m; i++) {
+      const slicedArr = s.slice(y);
+      newArr.push(slicedArr[i]);
+    }
+    const sum = newArr.reduce((acc, val) => acc + val);
+    if (sum == d) count++;
+  });
+  return count;
+}
