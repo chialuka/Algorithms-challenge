@@ -186,3 +186,20 @@ function divisibleSumPairs(n, k, ar) {
   })
   return count;
 }
+
+/**
+ * BON APPETIT
+ * Anna and Brian are sharing a meal at a restuarant and they agree to split the bill equally. 
+ * Brian wants to order something that Anna is allergic to though, 
+ * and they agree that Anna won't pay for that item. 
+ * Brian gets the check and calculates Anna's portion. 
+ * You must determine if his calculation is correct.
+ * bonAppetit has the following parameter(s):
+ * bill: an array of integers representing the cost of each item ordered
+ * k: an integer representing the zero-based index of the item Anna doesn't eat
+ * b: the amount of money that Anna contributed to the bill
+ */
+function bonAppetit(bill, k, b) {
+  const ans = bill.filter((x, y) => y != k).reduce((acc, val) => acc + val) / 2;
+  console.log(ans == b ? 'Bon Appetit' : (b - ans));
+}
