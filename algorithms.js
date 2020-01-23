@@ -203,3 +203,28 @@ function bonAppetit(bill, k, b) {
   const ans = bill.filter((x, y) => y != k).reduce((acc, val) => acc + val) / 2;
   console.log(ans == b ? 'Bon Appetit' : (b - ans));
 }
+
+
+/**
+ * SOCK MERCHANT
+ * John works at a clothing store. He has a large pile of socks that he must pair by color for sale. 
+ * Given an array of integers representing the color of each sock, 
+ * determine how many pairs of socks with matching colors there are.
+ * @param {Number} n the number of socks in the pile
+ * @param {array} ar the colors of each sock
+ */
+function sockMerchant(n, ar) {
+  let count = 0;
+  const obj = ar.reduce((acc, val) => {
+    if (acc[val]) {
+      acc[val] += 1;
+    } else {
+      acc[val] = 1
+    }
+    return acc;
+  }, {});
+  for (const prop in obj) {
+    count += Math.floor(obj[prop] / 2);
+  }
+  return count;
+}
