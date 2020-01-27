@@ -280,3 +280,25 @@ function designerPdfViewer(h, word) {
   const wordArray = word.split('').map((x) => h[letters.indexOf(x)]);
   return Math.max(...wordArray) * word.length;
 }
+
+
+/**
+ * BEAUTIFUL DAYS
+ * Given a range of numbered days, [i...j] and a number k, 
+ * determine the number of days in the range that are beautiful. 
+ * Beautiful numbers are defined as numbers where [i - reverse(i)] is evenly divisible by k. 
+ * If a day's value is a beautiful number, it is a beautiful day. 
+ * Print the number of beautiful days in the range.
+ * beautifulDays has the following parameter(s):
+ * i: the starting day number
+ * j: the ending day number
+ * k: the divisor
+ */
+function beautifulDays(i, j, k) {
+  let count = 0;
+  for (let a = i; a <= j; a++) {
+    const val = a - a.toString().split('').reverse().join('');
+    if (val % k == 0) count++
+  }
+  return count;
+}
