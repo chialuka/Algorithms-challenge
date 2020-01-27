@@ -264,3 +264,19 @@ function hurdleRace(k, height) {
   const res = Math.max(...height) - k;
   return res > 0 ? res : 0;
 }
+
+
+
+/**
+ * DESIGNER PDF VIEWER
+ * In this challenge, you will be given a list of letter heights in the alphabet and a string. 
+ * Using the letter heights given, determine the area of the rectangle highlight in mm² assuming all letters are 1mm wide.
+ * @param {Array} h an array of integers representing the heights of each letter
+ * @param {String} word the word to calculate it's area
+ */
+function designerPdfViewer(h, word) {
+  const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  const wordArray = word.split('').map((x) => h[letters.indexOf(x)]);
+  return Math.max(...wordArray) * word.length;
+}
