@@ -325,3 +325,17 @@ function viralAdvertising(n) {
   }
   return count;
 }
+
+
+/**
+ * SEQUENCE EQUATION
+ * Given a sequence of n integers, p(1), p(2)...p(n) 
+ * where each element is distinct and satisfies 1 <= p(x) <= n. 
+ * For each x where 1 <= x <= n, 
+ * find any integer y such that p(p(y)) = x and print the value of y on a new line.} p 
+ */
+function permutationEquation(p) {
+  const arr = p.map((x, y) => p.findIndex(a => a == y + 1)).map(x => x + 1);
+  const val = arr.map(x => p.findIndex(a => a == x)).map(x => x + 1);
+  return val;
+}
