@@ -339,3 +339,36 @@ function permutationEquation(p) {
   const val = arr.map(x => p.findIndex(a => a == x)).map(x => x + 1);
   return val;
 }
+
+
+/**
+ * STAIRCASE
+ * Consider a staircase of size n = 4:
+ *    #
+ *   ##
+ *  ###
+ * ####
+ * 
+ * Observe that its base and height are both equal to n, 
+ * and the image is drawn using # symbols and spaces. 
+ * The last line is not preceded by any spaces.
+ * Write a program that prints a staircase of size n.
+ * @param {Integer} n 
+ */
+function staircase(n) {
+  let ans = '';
+  for (let i = n - 1; i >= 0; i--) {
+      let val = i;
+      let hash = n - i;
+      while (val > 0) {
+        ans += ' ';
+        val--;
+      }
+      while (hash > 0) {
+        ans += '#';
+        hash--;
+      }
+      ans += '\n';
+  }
+  console.log(ans);
+}
