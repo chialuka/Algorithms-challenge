@@ -372,3 +372,21 @@ function staircase(n) {
   }
   console.log(ans);
 }
+
+/**
+ * VERY EVEN NUMBERS
+ * Write a function that returns true if the number is a "Very Even" number.
+ * If the number is odd, it is not a "Very Even" number.
+ * If the number is even, return whether the sum of the digits is a "Very Even" number.
+ * @param {Integer} n 
+ */
+function isVeryEvenNumber(n) {
+  let num = n.toString();
+  if (num.length == 1) return n % 2 == 0 ? true : false;
+  while (num.length > 1) {
+    const sum = num.split('').reduce((acc, val) => Number(acc) + Number(val));
+    num = sum.toString();
+  }
+  if (Number(num) % 2 == 0) return true;
+  return false;
+}
