@@ -390,3 +390,15 @@ function isVeryEvenNumber(n) {
   if (Number(num) % 2 == 0) return true;
   return false;
 }
+
+
+
+/**
+ * Count Letters and Numbers
+ * Create a method that can determine how many letters and digits are in a given string.
+ * @param {String} input 
+ */
+function countLettersAndDigits(input) {
+  const result = input.split('').filter(x => x.match(/[a-z0-9]/gi));
+  return result.length;
+}
