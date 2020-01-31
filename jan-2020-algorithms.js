@@ -402,3 +402,16 @@ function countLettersAndDigits(input) {
   const result = input.split('').filter(x => x.match(/[a-z0-9]/gi));
   return result.length;
 }
+
+
+/**
+ * CREATE PHONE NUMBER
+ * Write a function that accepts an array of 10 integers (between 0 and 9), 
+ * that returns a string of those numbers in the form of a phone number.
+ * @param {Array} numbers 
+ */
+function createPhoneNumber(numbers){
+  const first = `(${numbers.slice(0, 3).join('')}) `;
+  const second = `${numbers.slice(3, 6).join('')}-${numbers.slice(6).join('')}`;
+  return first + second;
+}
