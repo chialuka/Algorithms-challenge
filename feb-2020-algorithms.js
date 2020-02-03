@@ -15,3 +15,17 @@ function grabscrab(anagram, dictionary) {
   }
   return arr;
 }
+
+
+/**
+ * REMOVE DUPLICATE WORDS
+ * Your task is to remove all duplicate words from a string, leaving only single (first) words entries.
+ * @param {String} s 
+ */
+function removeDuplicateWords (s) {
+  const ans = s.split(' ').reduce((acc, val) => {
+    if (!acc.includes(val)) acc.push(val);
+    return acc;
+  }, []).join(' ');
+  return ans;
+}
