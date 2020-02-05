@@ -70,3 +70,14 @@ function zombie_shootout(zombies, range, ammo) {
   if (num >= zombies && ammo >= zombies) return `You shot all ${zombies} zombies.`;
   else return `You shot ${num} zombies before being eaten: overwhelmed.`
 }
+
+
+/**
+ * MINIMUM TO MULTIPLE
+ * Given two integers a and x, return the minimum non-negative number to add to / subtract from a to make it a multiple of x.
+ */
+function minimum(a, x) {
+  const res1 = (x * Math.ceil(a / x)) - a;
+  const res2 = a - (x * Math.floor(a /x));
+  return res1 < res2 ? res1 : res2;
+}
