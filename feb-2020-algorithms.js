@@ -81,3 +81,28 @@ function minimum(a, x) {
   const res2 = a - (x * Math.floor(a /x));
   return res1 < res2 ? res1 : res2;
 }
+
+
+/**
+ * BALANCED NUMBER
+ * Balanced number is the number that 
+ * The sum of all digits to the left of the middle digit(s) 
+ * and the sum of all digits to the right of the middle digit(s) are equal.
+ * Given a number, Find if it is Balanced or not .
+ * @param {Number} number 
+ */
+function balancedNum(number) {
+  if (number < 100) return 'Balanced';
+  const numString = number.toString();
+  let center = Math.floor(numString.length / 2);
+  let right = numString.slice(center + 1);
+  let left;
+  if (numString.length % 2 != 0) {
+    left = numString.slice(0, center)
+  } else {
+    left = numString.slice(0, center - 1);
+  }
+  const vals = [left, right];
+  const ans = vals.map(x => [...x].reduce((acc , val) => +acc + +val));
+  return ans[0] == ans[1] ? 'Balanced' : 'Not Balanced';
+}
