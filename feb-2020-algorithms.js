@@ -106,3 +106,22 @@ function balancedNum(number) {
   const ans = vals.map(x => [...x].reduce((acc , val) => +acc + +val));
   return ans[0] == ans[1] ? 'Balanced' : 'Not Balanced';
 }
+
+
+/**
+ * REPEATED SUBSTRING
+ * For a given nonempty string s find a minimum substring t and the maximum number k, 
+ * such that the entire string s is equal to t repeated k times. 
+ * The input string consists of lowercase latin letters. 
+ * Your function should return a tuple (in Python) (t, k) or an array (in Ruby and JavaScript) [t, k]
+ * @param {String} s
+ */
+function f(s) {
+  const first = s.charAt(0);
+  const nextIndex = [...s.slice(1)].indexOf(first);
+  const word = s.slice(0, nextIndex + 1);
+  if (nextIndex == -1) return [s, 1];
+  let count = 0;
+  [...s].forEach((x, y) => x == first && s.slice(y).includes(word) ? count++ : '');
+  return s.slice(nextIndex).includes(word) ? [word, count] : [s, count];
+}
