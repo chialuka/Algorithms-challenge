@@ -134,5 +134,19 @@ function f(s) {
  */
 function sumOfMinimums(arr) {
   const val = arr.map(x => Math.min(...x)).reduce((acc, val) => acc + val);
+  // Alternate solution
+  // const val = arr.reduce((acc, val) => acc + Math.min(...val), 0);
   return val;
+}
+
+
+
+/**
+ * NO ODDITIES
+ * Write a small function that returns the values of an array that are not odd.
+ * All values in the array will be integers. Return the good values in the order they are given.
+ * @param {Array} values 
+ */
+function noOdds( values ){
+  return values.filter(x => x % 2 == 0);
 }
