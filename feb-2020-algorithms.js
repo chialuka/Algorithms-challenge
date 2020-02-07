@@ -125,3 +125,14 @@ function f(s) {
   [...s].forEach((x, y) => x == first && s.slice(y).includes(word) ? count++ : '');
   return s.slice(nextIndex).includes(word) ? [word, count] : [s, count];
 }
+
+
+/**
+ * SUM OF MINIMUMS
+ * Given an 2D array of size m * n. Your task is to find the sum of minimum value in each row.
+ * @param {Array} arr 
+ */
+function sumOfMinimums(arr) {
+  const val = arr.map(x => Math.min(...x)).reduce((acc, val) => acc + val);
+  return val;
+}
