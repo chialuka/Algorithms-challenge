@@ -150,3 +150,11 @@ function sumOfMinimums(arr) {
 function noOdds( values ){
   return values.filter(x => x % 2 == 0);
 }
+
+
+/**
+ * SUM OF ANGLES
+ * Find the total sum of angles in an n sided shape. N will be greater than 2.
+ * @param {Number} n 
+ */
+const angle = (n) => 180 * (n - 2);
