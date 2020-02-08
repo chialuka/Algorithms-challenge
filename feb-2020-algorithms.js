@@ -287,3 +287,18 @@ function solution(number){
   }
   return count.reduce((acc, val) => acc + val, 0);
 }
+
+
+/**
+ * SUM OF DIGITS/DIGITAL ROOT
+ * In this kata, you must create a digital root function.
+ * A digital root is the recursive sum of all the digits in a number. 
+ * Given n, take the sum of the digits of n. If that value has more than one digit, 
+ * continue reducing in this way until a single-digit number is produced. 
+ * This is only applicable to the natural numbers.
+ * @param {Number} n 
+ */
+function digital_root(n) {
+  if (n < 10) return n;
+  return digital_root([...n.toString()].reduce((a, b) => +a + +b, 0));
+}
