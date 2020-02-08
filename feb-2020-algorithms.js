@@ -302,3 +302,20 @@ function digital_root(n) {
   if (n < 10) return n;
   return digital_root([...n.toString()].reduce((a, b) => +a + +b, 0));
 }
+
+
+/**
+ * COUNTING DUPLICATES
+ * Write a function that will return the count of distinct case-insensitive alphabetic characters 
+ * and numeric digits that occur more than once in the input string. 
+ * The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+ * @param {String} text 
+ */
+function duplicateCount(text){
+  const ans = [...text.toLowerCase()].reduce((acc, val) => {
+    if (acc[val]) acc[val] += 1;
+    else acc[val] = 1;
+    return acc;
+  }, {});
+  return Object.values(ans).filter(x => x > 1).length;
+}
