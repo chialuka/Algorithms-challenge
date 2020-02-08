@@ -241,3 +241,26 @@ function partsSums(ls) {
   sums.unshift(sum);
   return sums;
 }
+
+
+/**
+ * ODDONEOUT
+ * Write a function that will take in a string and 
+ * return all the unpaired characters (show up an odd number of times in the string) 
+ * in the order they were encountered as an array. 
+ * In case of multiple options to choose from, take the last occurence as the unpaired character.
+ * 
+ * Notes
+ * A wide range of characters is used, and some of them may not render properly in your browser.
+ * Your solution should be linear in terms of string length to pass the last test.
+ * @param {String} str 
+ */
+function oddOneOut(str) {
+  let ans = '';
+  for (let i = 0; i < str.length; i++) {
+   const index = ans.indexOf(str[i]);
+   if (index > -1) ans = ans.replace(str[i], '');
+   else ans += str[i];
+ }
+ return ans.split('');
+}
