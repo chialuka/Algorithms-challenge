@@ -348,3 +348,29 @@ function oddRow(n) {
   }
   return arr;
 }
+
+
+/**
+ * MEMORY GAME ARRAY
+ * In the memory game, numbers are randomly placed face-down in a grid. 
+ * Each turn, the player chooses a number to peek at, and then replace, face down. 
+ * If they choose two of the same number in a row, those numbers are removed from the grid. 
+ * The aim is to clear the board!
+ * Your job is to produce an array of pairs of numbers, placed in a random spot in the array.
+ * The array (and result) could look somthing like:
+ * [3,1,2,1,3,2,4,4] for an 8 tile memory game.
+ * Your task is to implement the function createTiles(n) where n is the number of tiles. 
+ * The function should return an array with the length n containing randomized, paired, integers starting with 1. 
+ * Duplicate pairs are not allowed.
+ * Special cases: if n is odd or zero, an empty array should be returned
+ * @param {Number} n 
+ */
+function createTiles(n){
+  if (n == 0 || n % 2 != 0) return [];
+  const arr = [...Array((n / 2) + 1).keys()].slice(1);
+  const dup = [...arr]
+  for(let i = 0; i < dup.length; i++) {
+    arr.splice(Math.round(Math.random() * arr.length), 0, dup[i]);
+  }
+  return arr;
+}
