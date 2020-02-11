@@ -426,3 +426,19 @@ const solution = function(firstArray, secondArray) {
     return acc + Math.pow(val - secondArray[ind], 2)
   }, 0) / firstArray.length;
 }
+
+
+/**
+ * NUMBER OF TRAILING ZEROS OF N!
+ * Write a program that will calculate the number of trailing zeros in a factorial of a given number.
+ * N! = 1 * 2 * 3 * ... * N
+ * @param {Number} n 
+ */
+function zeros (n) {
+  let count = 0;
+  const limit = Math.floor(Math.log(n) / Math.log(5));
+  for (let i = 1; i <= limit; i++) {
+    count += Math.floor(n / Math.pow(5, i));
+  }
+  return count;
+}
