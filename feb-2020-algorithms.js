@@ -442,3 +442,13 @@ function zeros (n) {
   }
   return count;
 }
+
+
+/**
+ * BREAK CAMELCASE
+ * Complete the solution so that the function will break up camel casing, using a space between words.
+ * @param {String} string 
+ */
+function solution(string) {
+  return string.replace(/[A-Z]/g, ' $&');
+}
