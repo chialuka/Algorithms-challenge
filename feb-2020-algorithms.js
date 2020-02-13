@@ -468,3 +468,16 @@ function numPrimorial(n){
   const arr = [2, 3, 5, 7 , 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199];
   return arr.slice(0, n).reduce((a, b) => a * b, 1);
 }
+
+
+/**
+ * SCHOOL PAPERWORK
+ * Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+ * Your task is to calculate how many blank pages do you need.
+ * Note! if n or m < 0 return 0!
+ * @param {Number} n 
+ * @param {Number} m 
+ */
+function paperwork(n, m) {
+  return m < 0 || n < 0 ? 0 : m * n;
+}
