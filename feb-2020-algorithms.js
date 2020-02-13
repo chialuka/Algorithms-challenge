@@ -481,3 +481,21 @@ function numPrimorial(n){
 function paperwork(n, m) {
   return m < 0 || n < 0 ? 0 : m * n;
 }
+
+
+/**
+ * ALPHABETIC ADDITION
+ * Your task is to add up letters to one letter.
+ * The function will be given a variable amount of arguments, each one being a letter to add.
+ * Notes:
+ * Letters will always be lowercase.
+ * Letters can overflow (see second to last example of the description)
+ * If no letters are given, the function should return 'z'
+ * @param  {...String} letters 
+ */
+function addLetters(...letters) {
+  const alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  if (!letters.length) return 'z';
+  const ans = [...letters].reduce((a, b) => a + (alphabets.indexOf(b) + 1), 0);
+  return alphabets[(ans - 1) % 26];
+}
