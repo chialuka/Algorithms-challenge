@@ -516,3 +516,25 @@ function solution(n){
 }
 // Alternate solution
 // function solution(n) => Math.round(n*2)/2;
+
+
+/**
+ * PANDEMIA
+ * ⚠️ The world is in quarantine! There is a new pandemia that struggles mankind. 
+ * Each continent is isolated from each other but infected people have spread before the warning. ⚠️
+ * 🗺️ You would be given a map of the world in a type of string:
+ * s = "01000000X000X011X0X"
+ * "0" : uninfected
+ * "1" : infected
+ * "X" : ocean
+ * ⚫ The virus can't spread in the other side of the ocean.
+ *  ⚫ If one person is infected every person in this continent gets infected too.
+ * ⚫ Your task is to find the percentage of human population that got infected in the end.
+ * ☑️ Return the percentage % of the total population that got infected.
+ * @param {String} s 
+ */
+function infected(s) {
+  let count = 0;
+  const arr = s.split('X').map(x => x.length && x.includes('1') ? count += x.length : '');
+  return count > 0 ? count / s.split('').filter(x => x != 'X').length * 100 : 0;
+}
