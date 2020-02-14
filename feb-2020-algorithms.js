@@ -499,3 +499,20 @@ function addLetters(...letters) {
   const ans = [...letters].reduce((a, b) => a + (alphabets.indexOf(b) + 1), 0);
   return alphabets[(ans - 1) % 26];
 }
+
+
+/**
+ * ROUND BY 0.5
+ * Round any given number to the closest 0.5 step
+ * Round up if number is as close to previous and next 0.5 steps.
+ * @param {Number} n 
+ */
+function solution(n){
+  const diff = Math.ceil(n) - n;
+  if (diff > 0.75) return Math.floor(n);
+  if (diff < 0.75 && diff > 0.5) return Math.floor(n) + 0.5;
+  if (diff <= 0.5 && diff > 0.25) return Math.floor(n) + 0.5;
+  return Math.ceil(n);
+}
+// Alternate solution
+// function solution(n) => Math.round(n*2)/2;
