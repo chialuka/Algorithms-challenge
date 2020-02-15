@@ -538,3 +538,11 @@ function infected(s) {
   const arr = s.split('X').map(x => x.length && x.includes('1') ? count += x.length : '');
   return count > 0 ? count / s.split('').filter(x => x != 'X').length * 100 : 0;
 }
+
+
+/**
+ * FORM THE LARGEST
+ * Given a number , Return _The Maximum number _ could be formed from the digits of the number given .
+ * @param {Number} n 
+ */
+const maxNumber = (n) => Number(n.toString().split``.sort((a, b) => b - a).join``)
