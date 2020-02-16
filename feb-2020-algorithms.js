@@ -528,7 +528,7 @@ function solution(n){
  * "1" : infected
  * "X" : ocean
  * ⚫ The virus can't spread in the other side of the ocean.
- *  ⚫ If one person is infected every person in this continent gets infected too.
+ * ⚫ If one person is infected every person in this continent gets infected too.
  * ⚫ Your task is to find the percentage of human population that got infected in the end.
  * ☑️ Return the percentage % of the total population that got infected.
  * @param {String} s 
@@ -546,3 +546,19 @@ function infected(s) {
  * @param {Number} n 
  */
 const maxNumber = (n) => Number(n.toString().split``.sort((a, b) => b - a).join``)
+
+
+
+/**
+ * JUMPING NUMBER
+ * Jumping number is the number that All adjacent digits in it differ by 1.
+ * @param {Number} n 
+ */
+function jumpingNumber(n){
+  if (n < 10) return "Jumping!!";
+  const str = n.toString();
+  for (let i = 0; i < str.length - 1; i++) {
+    if (str[i + 1] - str[i] != 1 && str[i + 1] - str[i] != -1) return 'Not!!'
+  }
+  return 'Jumping!!'
+}
