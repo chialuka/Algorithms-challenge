@@ -589,3 +589,35 @@ function sumTriangularNumbers(n) {
   }
   return arr.reduce((a, b) => a + b, 0);
 }
+
+
+
+
+/**
+ * COMPLETE THE PATTERN
+ * You have to write a function pattern which returns the following Pattern(See Pattern & Examples) upto n number of rows.
+ * Note:Returning the pattern is not the same as Printing the pattern.
+ * Rules/Note:
+ * If n < 1 then it should return "" i.e. empty string.
+ * There are no whitespaces in the pattern.
+ * Pattern:
+ * 1
+ * 22
+ * 333
+ * ....
+ * .....
+ * nnnnnn
+ * @param {String} n
+ */
+function pattern(n){
+  let output="";
+   for (let i = 1; i <= n; i++) {
+   let j = 1;
+     while(j <= i) {
+       output += i + '';
+       if (i == j) output += '\n';
+       j++;
+     }
+   }
+   return output.slice(0, output.length - 1);
+ }
