@@ -638,3 +638,19 @@ function pattern(n){
   const val = newavg * (arr.length + 1) - arr.reduce((a, b) => a + b, 0);
   return val > 0 ? Math.ceil(val) : new TestError('TestError');
 }
+
+
+/**
+ * GOLF SCORE
+ * I have the par value for each hole on a golf course and my stroke score on each hole. 
+ * I have them stored as strings, because I wrote them down on a sheet of paper. 
+ * Right now, I'm using those strings to calculate my golf score by hand: 
+ * take the difference between my actual score and the par of the hole, and add up the results for all 18 holes.
+ * Complete the function which accepts two strings and calculates the golf score of a game. 
+ * Both strings will be of length 18, and each character in the string will be a number between 1 and 9 inclusive.
+ * @param {String} parList 
+ * @param {String} scoreList 
+ */
+function golfScoreCalculator(parList, scoreList){
+  return scoreList.split``.reduce((a, b, c) => a + (b - parList[c]), 0);
+}
