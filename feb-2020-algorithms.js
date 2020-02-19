@@ -654,3 +654,22 @@ function pattern(n){
 function golfScoreCalculator(parList, scoreList){
   return scoreList.split``.reduce((a, b, c) => a + (b - parList[c]), 0);
 }
+
+
+/**
+ * RUNNING PACE
+ * Calculate running pace. To do that, we have to know the distance and the time.
+ * distance - An float with the number of kilometres
+ * time - A string containing the time it took to travel the distance. It will always be minutes:seconds. For example "25:00" means 25 minutes. You don't have to deal with hours.
+ * The function should return the pace, for example "4:20" means it took 4 minutes and 20 seconds to travel one kilometre.
+ * Note: The pace should always return only the number of minutes and seconds. You don't have to convert these into hours. Floor the number of seconds.
+ * @param {Number} distance 
+ * @param {String} time 
+ */
+function runningPace(distance, time) {
+  const diff = (+time.slice(-9, -3) + +(time.slice(-2) / 60)) / distance;
+  const dec = 60 * (diff - Math.floor(diff));
+  let sec = Math.round(dec) - dec < 0.00001 ? Math.round(dec) : Math.trunc(dec);
+  if (sec < 10) sec = `0${sec}`
+  return `${Math.trunc(diff)}:${sec}`
+}
