@@ -673,3 +673,23 @@ function runningPace(distance, time) {
   if (sec < 10) sec = `0${sec}`
   return `${Math.trunc(diff)}:${sec}`
 }
+
+
+
+/**
+ * WHAT'S IN A NAME
+ * Test whether or not the string contains all of the letters which spell a given name, in order.
+ * @param {String} str 
+ * @param {String} name 
+ */
+function nameInStr(str, name){
+  const letters = [...str].filter(x => name.toLowerCase().includes(x));
+  if (letters.length < name.length) return false;
+  let temp = letters;
+  for (let i = 0; i < name.length; i++) {
+    const ind = temp.findIndex(x => x.toLowerCase() == name[i].toLowerCase());
+    if (ind < 0) return false
+    temp = temp.slice(ind + 1)
+  }
+  return true;
+}
