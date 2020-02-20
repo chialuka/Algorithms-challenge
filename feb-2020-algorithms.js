@@ -725,3 +725,20 @@ const AmIAfraid = function(day, num){
   }
   return values[day](num);
 }
+
+
+/**
+ * POLYDIVISIBLE NUMBERS
+ * A polydivisible number is divisible in an unusual way. 
+ * The first digit is cleanly divisible by 1, the first two digits are cleanly divisible by 2, the first three by 3, and so on.
+ * Your job: check if a number is polydivisible or not.
+ * Return true if it is, and false if it isn't.
+ * @param {Number} x 
+ */
+function polydivisible(x) {
+  const str = x.toString();
+  for (let i = 1; i <= str.length; i++) {
+    if (str.slice(0, i) % i != 0) return false
+  }
+  return true;
+}
