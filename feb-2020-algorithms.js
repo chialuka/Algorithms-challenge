@@ -762,3 +762,17 @@ const solution = (str, ending) => !ending.length ? true: str.slice(-ending.lengt
  * @param {Array} ages 
  */
 const twoOldestAges = (ages) => ages.sort((a, b) => a - b).slice(-2)
+
+
+
+/**
+ * MAXIMUM MULTIPLE
+ * Given a Divisor and a Bound , Find the largest integer N , Such That:
+ * Conditions :
+ * N is divisible by divisor
+ * N is less than or equal to bound
+ * N is greater than 0.
+ * @param {Number} divisor 
+ * @param {Number} bound 
+ */
+const maxMultiple = (divisor, bound) => Math.floor(bound / divisor) * divisor;
