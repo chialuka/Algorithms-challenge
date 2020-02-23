@@ -797,3 +797,12 @@ function menFromBoys(arr){
   const even = ar.filter((x, y, z) => x % 2 == 0).sort((a, b) => a - b);
   return even.concat(odd);;
 }
+
+
+
+/**
+ * FORM THE MINIMUM
+ * Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once (ignore duplicates).
+ * @param {Array} values 
+ */
+const minValue = (values) => +[...new Set(values)].sort((a, b) => a - b).join('');
