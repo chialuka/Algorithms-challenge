@@ -822,4 +822,25 @@ const rowWeights = (array) => {
     return acc;
   }, [0, 0]);
   return ans;
+}
+
+
+/**
+ * GROWTH OF A POPULATION
+ * p0, percent, aug (inhabitants coming or leaving each year), p (population to surpass)
+ * The function nb_year should return n number of entire years needed to get a population greater or equal to p.
+ * aug is an integer, percent a positive or null number, p0 and p are positive integers (> 0)
+ * @param {Number} p0 
+ * @param {Number} percent 
+ * @param {Number} aug 
+ * @param {Number} p 
+ */
+function nbYear(p0, percent, aug, p) {
+  let temp = p0;
+  let count = 0;
+  while (temp < p) {
+    temp += Math.floor(temp * (percent / 100)) + aug;
+    count++;
   }
+  return count;
+}
