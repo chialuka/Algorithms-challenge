@@ -844,3 +844,12 @@ function nbYear(p0, percent, aug, p) {
   }
   return count;
 }
+
+
+
+/**
+ * MAXIMUM TRIPLET SUM
+ * Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications .
+ * @param {Array} numbers 
+ */
+const maxTriSum = (numbers) => [...new Set(numbers)].sort((a, b) => a - b).slice(-3).reduce((a, b) => a + b, 0);
