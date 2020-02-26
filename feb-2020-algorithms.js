@@ -915,3 +915,13 @@ function sabb(x, val, happ){
   const ans = x.split``.reduce((a, b) => a + +'sabbatical'.includes(b), 0);
   return ans + val + happ > 22 ? 'Sabbatical! Boom!' : 'Back to your desk, boy.';
 }
+
+
+
+/**
+ * TESTING 1-2-3
+ * Write a function which takes a list of strings and returns each line prepended by the correct number.
+ * The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+ * @param {Array} array 
+ */
+const number = (array) => array.reduce((a, b, c) => a.concat(`${c + 1}: ${b}`), []);
