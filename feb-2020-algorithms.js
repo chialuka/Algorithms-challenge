@@ -872,3 +872,23 @@ function solution(str){
   if (half > Math.floor(half)) val.push(`${str.slice(-1)}_`);
   return val;
 }
+
+
+/**
+ * FINANCING PLAN ON PLANET XY140Z-n
+ * I need to save some money to buy a gift. I think I can do something like that:
+ * First week (W0) I save nothing on Sunday, 1 on Monday, 2 on Tuesday... 6 on Saturday, 
+ * Second week (W1) 2 on Monday... 7 on Saturday and so on according to the table below where the days are numbered from 0 to 6.
+ * Imagine now that we live on planet XY140Z-n where the days of the week are numbered from 0 to n (integer n > 0) 
+ * and where I save from week number 0 to week number n included (in the table below n = 6).
+ * @param {Array} n 
+ */
+function finance(n) {
+  const arr = [...Array(n + 1).keys()]
+  let val = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let ar = arr.slice(i);
+    val += ar.reduce((acc, val) => acc + (val + i), 0);
+  }
+  return val;
+}
