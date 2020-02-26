@@ -793,8 +793,8 @@ const maxMultiple = (divisor, bound) => Math.floor(bound / divisor) * divisor;
  */
 function menFromBoys(arr){
   const ar = [...new Set(arr)];
-  const odd = ar.filter((x, y , z) => x % 2 != 0).sort((a, b) => b - a);
-  const even = ar.filter((x, y, z) => x % 2 == 0).sort((a, b) => a - b);
+  const odd = ar.filter(x => x % 2 != 0).sort((a, b) => b - a);
+  const even = ar.filter(x => x % 2 == 0).sort((a, b) => a - b);
   return even.concat(odd);;
 }
 
@@ -853,3 +853,22 @@ function nbYear(p0, percent, aug, p) {
  * @param {Array} numbers 
  */
 const maxTriSum = (numbers) => [...new Set(numbers)].sort((a, b) => a - b).slice(-3).reduce((a, b) => a + b, 0);
+
+
+
+/**
+ * SPLIT STRINGS
+ * Complete the solution so that it splits the string into pairs of two characters. 
+ * If the string contains an odd number of characters 
+ * then it should replace the missing second character of the final pair with an underscore ('_').
+ * @param {String} str 
+ */
+function solution(str){
+  const val = [];
+  const half = str.length / 2;
+  for (let i = 0; i < Math.floor(half) * 2; i += 2) {
+    val.push(str.slice(i, i + 2));
+  }
+  if (half > Math.floor(half)) val.push(`${str.slice(-1)}_`);
+  return val;
+}
