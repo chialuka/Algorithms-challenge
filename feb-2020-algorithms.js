@@ -925,3 +925,14 @@ function sabb(x, val, happ){
  * @param {Array} array 
  */
 const number = (array) => array.reduce((a, b, c) => a.concat(`${c + 1}: ${b}`), []);
+
+
+
+/**
+ * EMAIL ADDRESS OBFUSCATOR
+ * Write a function that takes an email address string and returns the obfuscated version as a string 
+ * that replaces the characters @ and . with [at] and [dot], respectively.
+ */
+obfuscate = function(email) {
+  return email.replace('@', ' [at] ').replace(/\./g, ' [dot] ');
+}
