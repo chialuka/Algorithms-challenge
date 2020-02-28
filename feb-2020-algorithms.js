@@ -946,3 +946,17 @@ obfuscate = function(email) {
  * @param {String} s 
  */
 const findShort = (s) => Math.min(...s.split` `.map(x => x.length));
+
+
+
+/**
+ * nUMBER OF OCCURENCES
+ * Write a functionthat returns the number of occurrences of an element in an array.
+ */
+Array.prototype.numberOfOccurrences = function() {
+  return this.filter(x => x == arguments[0]).length;
+}
+//   const newArr = this.sort();
+//   if (newArr.indexOf(arguments[0]) < 0) return 0;
+//   const ans = newArr.lastIndexOf(arguments[0]) - newArr.indexOf(arguments[0]);
+//   return ans + 1;
