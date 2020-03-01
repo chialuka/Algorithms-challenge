@@ -960,3 +960,37 @@ Array.prototype.numberOfOccurrences = function() {
 //   if (newArr.indexOf(arguments[0]) < 0) return 0;
 //   const ans = newArr.lastIndexOf(arguments[0]) - newArr.indexOf(arguments[0]);
 //   return ans + 1;
+
+
+
+/**
+ * SCRABBLE SCORE
+ * Write a program that, given a word, computes the scrabble score for that word.
+ * Letter Values
+ * You'll need these:
+ * Letter                           Value
+ * A, E, I, O, U, L, N, R, S, T       1
+ * D, G                               2
+ * B, C, M, P                         3
+ * F, H, V, W, Y                      4
+ * K                                  5
+ * J, X                               8
+ * Q, Z                               10
+ * @param {String} str 
+ */
+function scrabbleScore(str){
+  const obj = {
+    1: 'aeioulnrst',
+    2: 'dg',
+    3: 'bcmp',
+    4: 'fhvwy',
+    5: 'k',
+    8: 'jx',
+    10: 'qz'
+  }
+  
+  let count = 0;
+  
+  str.toLowerCase().split``.map(x => Object.entries(obj).reduce((acc, val) => val[1].includes(x) ? count += +val[0] : count +=  0, 0))
+  return count;
+}
