@@ -1025,3 +1025,16 @@ const lottery = (str) => {
   const ans = str.match(/[0-9]/g)
   return ans ? [...new Set(ans)].join('') : 'One more run!';
 };
+
+
+
+/**
+ * MAXIMUM GAP
+ * Given an array/list [] of integers , Find The maximum difference between the successive elements in its sorted form.
+ * @param {Array} numbers 
+ */
+const maxGap = (numbers) => {
+  const vals = numbers.sort((a, b) => b - a).map((x, y, z) => x - z[y + 1]);
+  vals.pop();
+  return Math.max(...vals)
+}
