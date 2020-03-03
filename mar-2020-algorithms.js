@@ -95,3 +95,13 @@ function howMuchCoffee(events) {
   const value = events.reduce((x, y) => allowed.includes(y) ? x += 1 : allowed.map(a => a.toUpperCase()).includes(y) ? x += 2 : x += 0, 0)
   return value > 3 ? 'You need extra sleep' : value;
 }
+
+
+
+/**
+ * PRODUCT OF ARRAY MAXIMUM NUMBERS
+ * Given an array/list [] of integers , Find the product of the k maximal numbers.
+ * @param {Array} numbers 
+ * @param {Number} size 
+ */
+const maxProduct = (numbers, size) => numbers.sort((a, b) => a - b).slice(-size).reduce((x, y) => x * y, 1);
