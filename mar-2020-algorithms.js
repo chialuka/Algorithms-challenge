@@ -119,3 +119,20 @@ const maxProduct = (numbers, size) => numbers.sort((a, b) => a - b).slice(-size)
 function isPangram(string){
   return [...new Set(string.match(/[a-z]/gi).map(x => x.toLowerCase()))].length == 26
 }
+
+
+
+/**
+ * PRODUCT ARRAY
+ * Given an array/list [] of integers, 
+ * Construct a product array Of same size Such That prod[i] is equal to The Product of all the elements of Arr[] except Arr[i].
+ * @param {Array} numbers 
+ */
+function productArray(numbers){
+  const values = [];
+  for(let i = 0; i < numbers.length; i++) {
+    const result = numbers.filter((x, y) => y != i).reduce((a, b) => a * b, 1);
+    values.push(result);
+  }
+  return values;
+}
