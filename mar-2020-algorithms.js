@@ -136,3 +136,21 @@ function productArray(numbers){
   }
   return values;
 }
+
+
+
+/**
+ * MINIMUM STEPS
+ * Given an array of N integers, you have to find how many times you have to add up the smallest numbers in the array 
+ * until their Sum becomes greater or equal to K.
+ * @param {Array} numbers 
+ * @param {Number} value 
+ */
+function minimumSteps(numbers, value){
+  const val = numbers.sort((a, b) => a - b);
+  const ans = [];
+  for (let i = 0; i < val.length; i++) {
+    if (ans.reduce((a, b) => a + b, 0) < value) ans.push(val[i])
+  }
+  return ans.length - 1;
+}
