@@ -191,3 +191,20 @@ function cleanString(s) {
   }
   return str.filter(x => x != '#').join('')
 };
+
+
+
+/**
+ * CONSONANT VALUE
+ * Given a lowercase string that has alphabetic characters only and no spaces, 
+ * return the highest value of consonant substrings. 
+ * Consonants are any letters of the alpahabet except "aeiou".
+ * We shall assign the following values: a = 1, b = 2, c = 3, .... z = 26.
+ * @param {String} s 
+ */
+function solve(s) {
+  const alpha = '0abcdefghijklmnopqrstuvwxyz'
+  const words = s.replace(/[a,e,i,o,u]/g, '-').split('-').filter(x => x != '');
+  const values = words.map(word => [...word].reduce((a, b) => a + alpha.indexOf(b), 0));
+  return Math.max(...values);
+};
