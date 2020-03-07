@@ -208,3 +208,19 @@ function solve(s) {
   const values = words.map(word => [...word].reduce((a, b) => a + alpha.indexOf(b), 0));
   return Math.max(...values);
 };
+
+
+
+/**
+ * ALTERNATE CAPITALIZATION
+ * Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. 
+ * Index 0 will be considered even.
+ * For example, capitalize("abcdef") = ['AbCdEf', 'aBcDeF'].
+ * @param {String} s 
+ */
+function capitalize(s){
+  const arr = [...s];
+  const even = arr.map((x, y) => y % 2 == 0 ? x.toUpperCase() : x).join('')
+  const odd = arr.map((x, y) => y % 2 != 0 ? x.toUpperCase() : x).join('')
+  return [even, odd];
+};
