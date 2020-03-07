@@ -172,3 +172,22 @@ function minimumSteps(numbers, value){
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
   return mpg * fuelLeft >= distanceToPump ? true : false
 };
+
+
+
+/**
+ * BACKSPACE IN STRINGS
+ * Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+ * Your task is to process a string with "#" symbols.
+ * @param {String} s 
+ */
+function cleanString(s) {
+  let str = [...s];
+	for (let i = 0; i < str.length; i++) {
+    if (str[i] == '#' && i >= 1) {
+      str.splice((i - 1), 2);
+      i -= 2;
+    }
+  }
+  return str.filter(x => x != '#').join('')
+};
