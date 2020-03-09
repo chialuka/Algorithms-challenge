@@ -237,3 +237,18 @@ function firstNonConsecutive (arr) {
   const val = arr.find((x, y) => x - arr[y - 1] > 1);
   return val == undefined ? null : val;
 }
+
+
+
+/**
+ * NON CONSECUTIVE NUMBERS
+ * Your task is to find all the elements of an array that are non consecutive.
+ * @param {Array} arr 
+ */
+function allNonConsecutive (arr) {
+  const val = []
+  for (let i = 1; i < arr.length; i++) {
+   if (arr[i] - arr[i - 1] > 1) val.push({ i, n: arr[i]});
+  }
+  return val;
+}
