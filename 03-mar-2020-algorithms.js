@@ -224,3 +224,16 @@ function capitalize(s){
   const odd = arr.map((x, y) => y % 2 != 0 ? x.toUpperCase() : x).join('')
   return [even, odd];
 };
+
+
+
+/**
+ * FIND THE FIRST NON CONSECUTIVE NUMBER
+ * Your task is to find the first element of an array that is not consecutive.
+ * By not consecutive we mean not exactly 1 larger than the previous element of the array.
+ * @param {Array} arr 
+ */
+function firstNonConsecutive (arr) {
+  const val = arr.find((x, y) => x - arr[y - 1] > 1);
+  return val == undefined ? null : val;
+}
