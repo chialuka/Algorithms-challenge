@@ -252,3 +252,18 @@ function allNonConsecutive (arr) {
   }
   return val;
 }
+
+
+
+/**
+ * HELLO, NAME OR WORLD
+ * Define a method hello that returns "Hello, Name!" to a given name, or says Hello, World! if name is not given (or passed as an empty String).
+ * @param {String} name 
+ */
+function hello(name) {
+  let capitalized;
+  if (name) {
+   capitalized = name.charAt(0).toUpperCase();
+  }
+  return name ? `Hello, ${capitalized}${name.slice(1).toLowerCase()}!` : 'Hello, World!';
+}
