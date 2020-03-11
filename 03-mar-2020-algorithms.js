@@ -267,3 +267,17 @@ function hello(name) {
   }
   return name ? `Hello, ${capitalized}${name.slice(1).toLowerCase()}!` : 'Hello, World!';
 }
+// Alternate solution
+// const hello = (name) => name ? `Hello, ${name.charAt(0).toUpperCase()}${name.slice(1).toLowerCase()}!` : 'Hello, World!';
+
+
+
+/**
+ * CLOCK
+ * Clock shows 'h' hours, 'm' minutes and 's' seconds after midnight.
+ * Your task is to make 'Past' function which returns time converted to milliseconds.
+ * @param {Number} h 
+ * @param {Number} m 
+ * @param {Number} s 
+ */
+const past = (h, m, s) => ((h * 3600) + (m * 60) + s) * 1000;
