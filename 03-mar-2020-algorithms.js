@@ -300,3 +300,21 @@ function hiddenWord(num) {
   const obj = { 6: 'a', 1: 'b', 7: 'd', 4: 'e', 3: 'i', 2: 'l', 9: 'm', 8: 'n', 0: 'o', 5: 't' };
   return [...num.toString()].reduce((a, b) => a + obj[b], '');
 }
+
+
+
+/**
+ * TRIPLE TROUPLE
+ * Create a function that will return a string that combines all of the letters of the three inputed strings in groups. 
+ * Taking the first letter of all of the inputs and grouping them next to each other. Do this for every letter, see example below!
+ * @param {String} one 
+ * @param {String} two 
+ * @param {String} three 
+ */
+function tripleTrouble(one, two, three){
+  let str = '';
+  for (let i = 0; i < one.length; i++) {
+    str += one[i] + two[i] + three[i]
+  }
+  return str;
+ }
