@@ -331,3 +331,21 @@ function tripleTrouble(one, two, three){
  * @param {Number} dragons 
  */
 const hero = (bullets, dragons) => bullets >= (dragons * 2)
+
+
+
+/**
+ * NUMBER OF DIVISIONS
+ * Calculate how many times a number can be divided by a given number.
+ * @param {Number} n 
+ * @param {Number} divisor 
+ */
+const divisions = (n, divisor) => {
+  let count = 0;
+  let num = n;
+  while (num >= divisor) {
+    num /= divisor;
+    count++;
+  }
+  return count;
+};
