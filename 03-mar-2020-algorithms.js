@@ -368,3 +368,14 @@ function lateRide(n) {
   const mm = (n % 60).toString();
   return [...hh, ...mm].reduce((a, b) => +a + +b, 0);
 }
+
+
+
+/**
+ * BREAKING CHOCOLATE
+ * Your task is to split the chocolate bar of given dimension n x m into small squares. 
+ * Each square is of size 1x1 and unbreakable. Implement a function that will return minimum number of breaks needed.
+ * @param {Number} n 
+ * @param {Number} m 
+ */
+const breakChocolate = (n,m) => n * m ? (n * m) - 1 : 0;
