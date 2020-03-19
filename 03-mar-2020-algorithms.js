@@ -379,3 +379,12 @@ function lateRide(n) {
  * @param {Number} m 
  */
 const breakChocolate = (n,m) => n * m ? (n * m) - 1 : 0;
+
+
+
+/**
+ * CHECK THESE LETTERS
+ * Write a function that checks if all the letters in the second string are present in the first one at least once, regardless of how many times they appear:
+ * @param {Array} arr 
+ */
+const letterCheck = (arr) => ![...new Set(arr[1].toLowerCase())].some(x => !arr[0].toLowerCase().includes(x))
