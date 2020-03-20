@@ -388,3 +388,18 @@ const breakChocolate = (n,m) => n * m ? (n * m) - 1 : 0;
  * @param {Array} arr 
  */
 const letterCheck = (arr) => ![...new Set(arr[1].toLowerCase())].some(x => !arr[0].toLowerCase().includes(x))
+
+
+
+/**
+ * DIFFERENCE IN AGE
+ * You will be given an array of all the family members' ages, in any order. 
+ * The ages will be given in whole numbers, so a baby of 5 months, will have an ascribed ‘age’ of 0. 
+ * Return a new array with [youngest age, oldest age, difference between the youngest and oldest age].
+ * @param {Array} ages 
+ */
+const differenceInAges = (ages) => {
+  const min = Math.min(...ages);
+  const max = Math.max(...ages);
+  return [min, max, max - min] 
+}
