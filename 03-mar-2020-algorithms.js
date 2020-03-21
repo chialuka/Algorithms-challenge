@@ -403,3 +403,29 @@ const differenceInAges = (ages) => {
   const max = Math.max(...ages);
   return [min, max, max - min] 
 }
+
+
+
+/**
+ * SUM OF ODD NUMBERS
+ * Given the triangle of consecutive odd numbers:
+ *              1
+ *           3     5
+ *        7     9    11
+ *    13    15    17    19
+ * 21    23    25    27    29
+ * ...
+ * Calculate the row sums of this triangle from the row index (starting at index 1)
+ * @param {Number} n 
+ */
+function rowSumOddNumbers(n) {
+	const prev = n - 1;
+  const last = (Math.pow(prev, 2) + (prev)) + 1;
+  const arr = [last];
+  let i = 0;
+  while (i < prev) {
+    arr.push(arr[i] + 2);
+    i++
+  }
+  return arr.reduce((a, b) => a + b, 0);
+}
