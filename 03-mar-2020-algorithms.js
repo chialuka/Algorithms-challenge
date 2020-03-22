@@ -429,3 +429,13 @@ function rowSumOddNumbers(n) {
   }
   return arr.reduce((a, b) => a + b, 0);
 }
+
+
+/**
+ * REMOVING ELEMENTS
+ * Take an array and remove every second element out of that array. Always keep the first element and start removing with the next element.
+ * Example:
+ * myArr = ['Keep', 'Remove', 'Keep', 'Remove', 'Keep', ...];
+ * @param {Array} arr 
+ */
+const removeEveryOther = (arr) => arr.filter((x, y) => y % 2 == 0)
