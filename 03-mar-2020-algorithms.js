@@ -480,3 +480,27 @@ function getDrinkByProfession(param){
   }
   return obj[param.toLowerCase()] ? obj[param.toLowerCase()] : 'Beer'
 }
+
+
+
+/**
+ * GROWING PLANT
+ * Each day a plant is growing by upSpeed meters. Each night that plant's height 
+ * decreases by downSpeed meters due to the lack of sun heat. 
+ * Initially, plant is 0 meters tall. We plant the seed at the beginning of a day. 
+ * We want to know when the height of the plant will reach a certain level.
+ * @param {Number} upSpeed 
+ * @param {Number} downSpeed 
+ * @param {Number} desiredHeight 
+ */
+function growingPlant(upSpeed, downSpeed, desiredHeight) {
+  let count = 1;
+  let height = 0;
+  while (height < desiredHeight) {
+    height += upSpeed;
+    if (height >= desiredHeight) return count;
+    else height -= downSpeed;
+    count++;
+  }
+  return count;
+}
