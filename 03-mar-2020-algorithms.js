@@ -504,3 +504,12 @@ function growingPlant(upSpeed, downSpeed, desiredHeight) {
   }
   return count;
 }
+
+
+
+/**
+ * NUMBER OF DECIMAL DIGITS
+ * Determine the total number of digits in the integer (n>=0) given as input to the function.
+ * @param {Number} n 
+ */
+const digits = (n) => `${n}`.length
