@@ -513,3 +513,24 @@ function growingPlant(upSpeed, downSpeed, desiredHeight) {
  * @param {Number} n 
  */
 const digits = (n) => `${n}`.length
+
+
+
+/**
+ * DIFFERENCE OF TWO
+ * The objective is to return all pairs of integers from a given collection of integers that have a difference of 2.
+ * The result should be sorted in ascending order.
+ * The input will consist of unique values. The order of the integers in the input collection should not matter.
+ * @param {Array} input 
+ */
+function twosDifference(input){
+  const arr = input.sort((a, b) => a - b).reduce((acc, val) => {
+    const pair = input.find(x => x - val == 2)
+    if (pair) {
+      const temp = [val, pair];
+      acc.push(temp);
+    }
+    return acc;
+  }, []);
+  return arr;
+ }
