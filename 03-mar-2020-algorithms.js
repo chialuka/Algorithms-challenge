@@ -515,6 +515,41 @@ function growingPlant(upSpeed, downSpeed, desiredHeight) {
 const digits = (n) => `${n}`.length
 
 
+
+/**
+ * DIFFERENCE OF TWO
+ * The objective is to return all pairs of integers from a given collection of integers that have a difference of 2.
+ * The result should be sorted in ascending order.
+ * The input will consist of unique values. The order of the integers in the input collection should not matter.
+ * @param {Array} input 
+ */
+function twosDifference(input){
+  const arr = input.sort((a, b) => a - b).reduce((acc, val) => {
+    const pair = input.find(x => x - val == 2)
+    if (pair) {
+      const temp = [val, pair];
+      acc.push(temp);
+    }
+    return acc;
+  }, []);
+  return arr;
+ }
+
+
+
+ /**
+  * TRUE FOR JUST ONE
+  * Create a function called one that accepts two params:
+  * a sequence
+  * a function
+  * and returns true only if the function in the params returns true for exactly one item in the sequence.
+  * @param {Array} arr 
+  * @param {Function} fun 
+  */
+ const one = (arr, fun) => arr.filter(fun).length == 1;
+
+
+ 
 /**
  * IS IT EVEN
  * In this Kata we are passing a number (n) into a function.
