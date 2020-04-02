@@ -13,3 +13,22 @@ function moreZeros(s){
   .filter(x => x.length);
   return [...new Set(values)]
 }
+
+
+
+/**
+ * WHAT DOMINATES YOUR ARRAY
+ * A zero-indexed array arr consisting of n integers is given. 
+ * The dominator of array arr is the value that occurs in more than half of the elements of arr.
+ * @param {Array} arr 
+ */
+function dominator(arr) {
+  const res = arr.reduce((acc,val) => {
+     if (val in acc) acc[val] += 1;
+     else acc[val] = 1;
+     return acc;
+   }, {});
+   const ans = Math.max(...Object.values(res))
+   if (ans > arr.length / 2) return Number(Object.keys(res).find(key => res[key] === ans));
+   else return -1
+}
