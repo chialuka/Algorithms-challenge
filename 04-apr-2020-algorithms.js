@@ -32,3 +32,14 @@ function dominator(arr) {
    if (ans > arr.length / 2) return Number(Object.keys(res).find(key => res[key] === ans));
    else return -1
 }
+
+
+/**
+ * DISEMVOWEL
+ * Your task is to write a function that takes a string and return a new string with all vowels removed.
+ * @param {String} str 
+ */
+function disemvowel(str) {
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  return [...str].filter(x => !vowels.includes(x.toLowerCase())).join('');
+}
