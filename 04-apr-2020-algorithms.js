@@ -43,3 +43,24 @@ function disemvowel(str) {
   const vowels = ['a', 'e', 'i', 'o', 'u']
   return [...str].filter(x => !vowels.includes(x.toLowerCase())).join('');
 }
+
+
+
+/**
+ * ARRAY EXCHANGE
+ * t's time for some array exchange! 
+ * The objective is simple: exchange the elements of two arrays in-place in a way that their new content is also reversed.
+ * @param {Array} a 
+ * @param {Array} b 
+ */
+function exchangeWith(a, b) {
+  let newA = [...a.reverse()];
+  let newB = [...b.reverse()];
+  a.splice(0, a.length, [...newB]);
+  b.splice(0, b.length, [...newA]);
+  const temp = [a[0], b[0]];
+  a.pop();
+  a.push(...temp[0]);
+  b.pop();
+  b.push(...temp[1]);
+}
