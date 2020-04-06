@@ -91,3 +91,23 @@ function save(sizes, hd) {
   }
   return count;
 }
+
+
+
+/**
+ * REPLACEMENT
+ * About the replacement
+ * Choose exactly one element from the sequence and replace it with another integer > 0. You are not allowed to replace a number with itself, or to change no number at all.
+ * Task
+ * Find the lowest possible sequence after performing a valid replacement, and sorting the sequence.
+ * Input:
+ * Input contains sequence with N integers. All elements of the sequence > 0. The sequenc will never be empty.
+ * Output:
+ * Return sequence with N integers — which includes the lowest possible values of each sequence element, after the single replacement and sorting has been performed.
+ * @param {Array} a 
+ */
+function replacement(a){
+  const great = Math.max(...a);
+  a.splice(a.indexOf(great), 1, great == 1 ? 2 : 1);
+  return a.sort((x, y) => x - y);
+}
