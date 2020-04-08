@@ -111,3 +111,15 @@ function replacement(a){
   a.splice(a.indexOf(great), 1, great == 1 ? 2 : 1);
   return a.sort((x, y) => x - y);
 }
+
+
+/**
+ * RESPONSIBLE DRINKING
+ * Codewars Bar recommends you drink 1 glass of water per standard drink so you're not hungover tomorrow morning.
+ * Your fellow coders have bought you several drinks tonight in the form of a string. Return a string suggesting how many glasses of water you should drink to not be hungover.
+ * @param {String} s 
+ */
+function hydrate(s) {
+  const val = s.match(/[0-9]/g).reduce((a, b) => +a + +b, 0);
+  return val == 1 ? val + ' glass of water' : val + ' glasses of water'
+}
