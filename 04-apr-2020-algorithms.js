@@ -123,3 +123,19 @@ function hydrate(s) {
   const val = s.match(/[0-9]/g).reduce((a, b) => +a + +b, 0);
   return val == 1 ? val + ' glass of water' : val + ' glasses of water'
 }
+
+
+
+/**
+ * FIND THE MIDDLE NUMBER
+ * Given a string of characters, I want the function findMiddle()/find_middle() to return the middle number in the product of each digit in the string.
+ * Example: 's7d8jd9' -> 7, 8, 9 -> 7*8*9=504, thus 0 should be returned as an integer.
+ * Not all strings will contain digits. In this case and the case for any non-strings, return -1.
+ * If the product has an even number of digits, return the middle two digits
+ * @param {String} str 
+ */
+function findMiddle(str){
+  if (!str || typeof str != 'string' || str.search(/\d/) == -1) return -1;
+  const val = str.match(/\d/g).reduce((a, b) => a * b , 1).toString();
+  return val.length % 2 == 1 ? +(val[Math.floor(val.length / 2)]) : +(val.slice(val.length / 2 - 1, val.length / 2 + 1))
+}
