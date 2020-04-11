@@ -139,3 +139,18 @@ function findMiddle(str){
   const val = str.match(/\d/g).reduce((a, b) => a * b , 1).toString();
   return val.length % 2 == 1 ? +(val[Math.floor(val.length / 2)]) : +(val.slice(val.length / 2 - 1, val.length / 2 + 1))
 }
+
+
+
+/**
+ * ESREVER
+ * Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)
+ * (the dedicated builtin(s) functionalities are deactivated)
+ * @param {array} array 
+ */
+const reverse = function(array) {
+  return array.reduce((acc, val) => {
+    if (acc) acc.unshift(val);
+    return acc;
+    }, [])
+  }
