@@ -163,3 +163,19 @@ const reverse = function(array) {
  * @param {Array} input 
  */
 const sumEvenNumbers = (input) => input.filter(x => x % 2 == 0).reduce((a, b) => a + b, 0)
+
+
+
+/**
+ * VALIDATE MY PASSWORD
+ * I will give you a string. You respond with "VALID" if the string meets the requirements or "INVALID" if it does not.
+ * Passwords must abide by the following requirements:
+ * More than 3 characters but less than 20.
+ * Must contain only alphanumeric characters.
+ * Must contain letters and numbers.
+ * @param {String} password 
+ */
+function validPass(password){
+  const val = password.match(/[^0-9a-z]/gi) || !password.match(/[0-9]/g) || !password.match(/[a-z]/gi);
+  return val || password.length <= 3 || password.length >= 20 ? 'INVALID' : 'VALID';
+}
