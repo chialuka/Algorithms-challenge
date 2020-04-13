@@ -153,4 +153,13 @@ const reverse = function(array) {
     if (acc) acc.unshift(val);
     return acc;
     }, [])
-  }
+}
+
+
+
+/**
+ * SUM EVEN NUMBERS
+ * Write a function named sumEvenNumbers, taking a sequence of numbers as single parameter. Your function must return the sum of the even values of this sequence.
+ * @param {Array} input 
+ */
+const sumEvenNumbers = (input) => input.filter(x => x % 2 == 0).reduce((a, b) => a + b, 0)
