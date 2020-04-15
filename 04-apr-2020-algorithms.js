@@ -179,3 +179,21 @@ function validPass(password){
   const val = password.match(/[^0-9a-z]/gi) || !password.match(/[0-9]/g) || !password.match(/[a-z]/gi);
   return val || password.length <= 3 || password.length >= 20 ? 'INVALID' : 'VALID';
 }
+
+
+
+/**
+ * MY LANGUAGES
+ * You are given a dictionary/hash/object containing some languages and your test results in the given languages. 
+ * Return the list of languages where your test score is at least 60, in descending order of the results.
+ * @param {Object} results 
+ */
+function myLanguages(results) {
+  const val = Object.values(results).sort((a, b) => b - a).filter(x => x >= 60)
+  const arr = [];
+  for (let i = 0; i < val.length; i++) {
+    let res = Object.keys(results).find(key => results[key] === val[i]);
+    arr.push(res)
+  }
+  return arr;
+}
