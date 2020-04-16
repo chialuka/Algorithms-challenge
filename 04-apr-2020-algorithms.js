@@ -197,3 +197,21 @@ function myLanguages(results) {
   }
   return arr;
 }
+
+
+
+/**
+ * HALVING SUM
+ * Given a positive integer n, calculate the following sum:
+ * n + n/2 + n/4 + n/8 + ...
+ * @param {Number} n 
+ */
+function halvingSum(n) {
+  let val = n;
+  let count = n;
+  while (val > 0) {
+    count += Math.floor(val / 2);
+    val /= 2
+  }
+  return count;
+}
