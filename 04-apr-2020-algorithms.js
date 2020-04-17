@@ -215,3 +215,11 @@ function halvingSum(n) {
   }
   return count;
 }
+
+
+/**
+ * FIND MIN AND MAX
+ * Implement a function that returns the minimal and the maximal value of a list (in this order).
+ * @param {Arra} arr 
+ */
+const getMinMax = (arr) => [Math.min(...arr), Math.max(...arr)];
