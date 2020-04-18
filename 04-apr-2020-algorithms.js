@@ -223,3 +223,13 @@ function halvingSum(n) {
  * @param {Arra} arr 
  */
 const getMinMax = (arr) => [Math.min(...arr), Math.max(...arr)];
+
+
+
+/**
+ * ABBREVIATE A TWO WORD NAME
+ * Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+ * The output should be two capital letters with a dot separating them.
+ * @param {String} name 
+ */
+const abbrevName = (name) => `${name[0].toUpperCase()}.${name[name.indexOf(' ') + 1].toUpperCase()}`
