@@ -6,11 +6,11 @@
  * so they are in the same order in the final array as they first appeared in the input string.
  * @param {String} s 
  */
-function moreZeros(s){
+function moreZeros(s) {
   const values = [...s].map((x, y) => s.charCodeAt(y).toString(2))
-  .map(x => [...x].sort())
-  .map((x, y) => x.length / 2 < x.lastIndexOf('0') + 1 ? s[y] : '')
-  .filter(x => x.length);
+    .map(x => [...x].sort())
+    .map((x, y) => x.length / 2 < x.lastIndexOf('0') + 1 ? s[y] : '')
+    .filter(x => x.length);
   return [...new Set(values)]
 }
 
@@ -23,14 +23,14 @@ function moreZeros(s){
  * @param {Array} arr 
  */
 function dominator(arr) {
-  const res = arr.reduce((acc,val) => {
-     if (val in acc) acc[val] += 1;
-     else acc[val] = 1;
-     return acc;
-   }, {});
-   const ans = Math.max(...Object.values(res))
-   if (ans > arr.length / 2) return Number(Object.keys(res).find(key => res[key] === ans));
-   else return -1
+  const res = arr.reduce((acc, val) => {
+    if (val in acc) acc[val] += 1;
+    else acc[val] = 1;
+    return acc;
+  }, {});
+  const ans = Math.max(...Object.values(res))
+  if (ans > arr.length / 2) return Number(Object.keys(res).find(key => res[key] === ans));
+  else return -1
 }
 
 
@@ -106,7 +106,7 @@ function save(sizes, hd) {
  * Return sequence with N integers — which includes the lowest possible values of each sequence element, after the single replacement and sorting has been performed.
  * @param {Array} a 
  */
-function replacement(a){
+function replacement(a) {
   const great = Math.max(...a);
   a.splice(a.indexOf(great), 1, great == 1 ? 2 : 1);
   return a.sort((x, y) => x - y);
@@ -134,9 +134,9 @@ function hydrate(s) {
  * If the product has an even number of digits, return the middle two digits
  * @param {String} str 
  */
-function findMiddle(str){
+function findMiddle(str) {
   if (!str || typeof str != 'string' || str.search(/\d/) == -1) return -1;
-  const val = str.match(/\d/g).reduce((a, b) => a * b , 1).toString();
+  const val = str.match(/\d/g).reduce((a, b) => a * b, 1).toString();
   return val.length % 2 == 1 ? +(val[Math.floor(val.length / 2)]) : +(val.slice(val.length / 2 - 1, val.length / 2 + 1))
 }
 
@@ -148,11 +148,11 @@ function findMiddle(str){
  * (the dedicated builtin(s) functionalities are deactivated)
  * @param {array} array 
  */
-const reverse = function(array) {
+const reverse = function (array) {
   return array.reduce((acc, val) => {
     if (acc) acc.unshift(val);
     return acc;
-    }, [])
+  }, [])
 }
 
 
@@ -175,7 +175,7 @@ const sumEvenNumbers = (input) => input.filter(x => x % 2 == 0).reduce((a, b) =>
  * Must contain letters and numbers.
  * @param {String} password 
  */
-function validPass(password){
+function validPass(password) {
   const val = password.match(/[^0-9a-z]/gi) || !password.match(/[0-9]/g) || !password.match(/[a-z]/gi);
   return val || password.length <= 3 || password.length >= 20 ? 'INVALID' : 'VALID';
 }
@@ -233,3 +233,25 @@ const getMinMax = (arr) => [Math.min(...arr), Math.max(...arr)];
  * @param {String} name 
  */
 const abbrevName = (name) => `${name[0].toUpperCase()}.${name[name.indexOf(' ') + 1].toUpperCase()}`
+
+
+
+/**
+ * TOTAL AMOUNT OF POINTS
+ * Our football team finished the championship. The result of each match look like "x:y". Results of all matches are recorded in the collection.
+ * For example: ["3:1", "2:2", "0:1", ...]
+ * Write a function that takes such collection and counts the points of our team in the championship. Rules for counting points for each match:
+ * if x>y - 3 points
+ * if x<y - 0 point
+ * if x=y - 1 point
+ * @param {*} games 
+ */
+function points(games) {
+  const arr = [];
+  for (let i = 0; i < games.length; i++) {
+    if (+games[i][0] > +games[i][games[i].length - 1]) arr.push(3)
+    if (+games[i][0] < +games[i][games[i].length - 1]) arr.push(0)
+    if (+games[i][0] == +games[i][games[i].length - 1]) arr.push(1)
+  }
+  return arr.reduce((a, b) => +a + +b, 0);
+}
