@@ -255,3 +255,15 @@ function points(games) {
   }
   return arr.reduce((a, b) => +a + +b, 0);
 }
+
+
+
+/**
+ * ARRAY PLUS ARRAY
+ * I want to get the sum of two arrays...actually the sum of all their elements.
+ * @param {Array} arr1 
+ * @param {Array} arr2 
+ */
+function arrayPlusArray(arr1, arr2) {
+  return [arr1, arr2].reduce((acc, val) => acc + val.reduce((x, y) => x + y, 0), 0);
+}
